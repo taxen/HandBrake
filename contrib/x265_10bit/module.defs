@@ -5,7 +5,7 @@ $(eval $(call import.CONTRIB.defs,X265_10))
 X265_10.FETCH.url     = https://download.handbrake.fr/contrib/x265_2.6.tar.gz
 X265_10.FETCH.url    += https://bitbucket.org/multicoreware/x265/downloads/x265_2.6.tar.gz
 X265_10.FETCH.url    += https://download.videolan.org/pub/videolan/x265/x265_2.6.tar.gz
-X265_10.FETCH.sha256  = 1bf0036415996af841884802161065b9e6be74f5f6808ac04831363e2549cdbf
+X265_10.FETCH.sha256  = a5b86a39b1c413be8e67e5b25a1a6d0f59ce9ac5adf3ef5ac6a341915dbb7042
 X265_10.EXTRACT.tarbase = x265_v2.6
 
 # Silence "warning: overriding recipe for target" messages

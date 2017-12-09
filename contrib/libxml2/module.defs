@@ -2,14 +2,16 @@ __deps__ := LIBICONV
 $(eval $(call import.MODULE.defs,LIBXML2,libxml2,$(__deps__)))
 $(eval $(call import.CONTRIB.defs,LIBXML2))
 
-LIBXML2.FETCH.url     = https://download.handbrake.fr/handbrake/contrib/libxml2-2.9.4.tar.gz
-LIBXML2.FETCH.url    += https://download.videolan.org/pub/contrib/libxml2/libxml2-2.9.4.tar.gz
-LIBXML2.FETCH.sha256  = ffb911191e509b966deb55de705387f14156e1a56b21824357cdf0053233633c
+LIBXML2.FETCH.url     = https://download.handbrake.fr/handbrake/contrib/libxml2-2.9.7.tar.gz
+LIBXML2.FETCH.url    += https://download.videolan.org/pub/contrib/libxml2/libxml2-2.9.7.tar.gz
+LIBXML2.FETCH.sha256  = 9b34222d7018abd1b189d156efaff86d088f3827256c505c801893f3ee264c6c
+
+LIBXML2.CONFIGURE.bootstrap = ./autogen.sh;
 
 # The Python components do not build on MinGW due to the lack of a select() call
 # in the MinGW environment.
 LIBXML2.CONFIGURE.extra = \
-    --without-python --without-threads
+    --without-python --without-threads --without-lzma
 
 ifeq (1-msys,$(BUILD.cross)-$(HOST.system))
     LIBXML2.CONFIGURE.args.build = --build=$(BUILD.machine)-unknown-linux-gnu
